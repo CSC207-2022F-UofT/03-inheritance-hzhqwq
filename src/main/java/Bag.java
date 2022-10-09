@@ -5,8 +5,6 @@
  * 1. Introduction to Java helpful.
  */
 
-import java.lang.reflect.Array;
-
 public abstract class Bag {
     /*
      * TODO: Create the following private instance variables
@@ -77,13 +75,15 @@ public abstract class Bag {
      *       This method should return true if the item was added
      *       and false otherwise.
      */
-    public boolean addItem(String item){
-        if (this.numberOfContents < this.capacity){
-            this.numberOfContents += 1;
+    public boolean addItem(String item) {
+        if (this.numberOfContents >= this.capacity) {
+            return false;
+        }
+        else {
             this.contents[numberOfContents] = item;
+            this.numberOfContents += 1;
             return true;
         }
-        return false;
     }
 
 
@@ -101,7 +101,7 @@ public abstract class Bag {
     public String popItem(){
         if (this.numberOfContents>0){
             this.numberOfContents -= 1;
-            String pop = this.contents[-1];
+            String pop = this.contents[contents.length-1];
             this.contents[-1] = null;
             return pop;
         }
