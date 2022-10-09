@@ -6,7 +6,7 @@
  * helpful while working through this exercise.
  */
 public class CrossbodyBag extends Bag{
-    int numberOfStraps;
+    private final int numberOfStraps;
     public CrossbodyBag(String color, int capacity, int numberOfStraps){
         super(color, capacity);
         this.numberOfStraps = numberOfStraps;
@@ -18,13 +18,13 @@ public class CrossbodyBag extends Bag{
 
     @Override
     public void enhance() {
-        this.capacity *=2;
+        this.increaseCapacity(2);
     }
 
     public String toString() {
-        return this.color + " Crossbody Bag with " + this.numberOfStraps +
-                " straps ("+ this.numberOfContents + " / " +
-                this.capacity + ")";
+        return this.getColor() + " Crossbody Bag with " + this.numberOfStraps +
+                " straps ("+ this.getNumberOfContents() + " / " +
+                this.getCapacity() + ")";
     }
 }
 
