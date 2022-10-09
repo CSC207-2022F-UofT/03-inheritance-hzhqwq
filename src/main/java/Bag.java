@@ -15,10 +15,10 @@ public abstract class Bag {
      *       - an int named capacity
      *       - an array of Strings named contents
      */
-    String color;
-    int numberOfContents;
-    int capacity;
-    String[] contents;
+    public String color;
+    public int numberOfContents;
+    public int capacity;
+    public String[] contents;
 
 
     /*
@@ -34,7 +34,7 @@ public abstract class Bag {
         this.color = bagColor;
         this.capacity = bagCapacity;
         this.numberOfContents = 0;
-        this.contents = new String[]{};
+        this.contents = new String[numberOfContents];
     }
 
 
@@ -80,7 +80,7 @@ public abstract class Bag {
     public boolean addItem(String item){
         if (this.numberOfContents < this.capacity){
             this.numberOfContents += 1;
-            this.contents.append(item);
+            this.contents[numberOfContents] = item;
             return true;
         }
         return false;
