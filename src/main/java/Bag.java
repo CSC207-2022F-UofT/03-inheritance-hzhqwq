@@ -101,8 +101,8 @@ public abstract class Bag {
     public String popItem(){
         if (this.numberOfContents>0){
             this.numberOfContents -= 1;
-            pop = this.contents[-1];
-            this.contents = Array.copyOf(this.contents, this.contents.length-1);
+            String pop = this.contents[-1];
+            this.contents[-1] = null;
             return pop;
         }
         return null;
