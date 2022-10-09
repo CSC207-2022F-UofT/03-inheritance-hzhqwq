@@ -102,7 +102,7 @@ public abstract class Bag {
         if (this.numberOfContents>0){
             this.numberOfContents -= 1;
             String pop = this.contents[contents.length-1];
-            this.contents[-1] = null;
+            this.contents[contents.length-1] = null;
             return pop;
         }
         return null;
